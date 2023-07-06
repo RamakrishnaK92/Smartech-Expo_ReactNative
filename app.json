@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "SmartTech-Expo-Demo",
+    "slug": "SmartTech-Expo-Demo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.demo.SmartTechExpoDemo"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.demo.SmartTechExpoDemo"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": ["my-config-plugin"],
+    "extra": {
+      "myArray": [
+        {
+          "name": "HANSEL_APP_ID",
+          "value": "5K3TTFUXQXLNCF3OLVWC69AR2"
+        },
+        {
+          "name": "HANSEL_APP_KEY",
+          "value": "UG0H2YI119T04FL5ES4Z4T78O2Z8S0FM5L7SP5UTJIIN5BKCHD"
+        },
+        {
+          "name": "SMT_APP_ID",
+          "value": "ff4a5629301dc5aa05466aa1397962b7"
+        }
+      ]
+    }
+  }
+}
