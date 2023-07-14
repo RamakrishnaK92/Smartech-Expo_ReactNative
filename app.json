@@ -16,19 +16,19 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.demo.SmartTechExpoDemo"
+      "bundleIdentifier": "com.smarttechexpodemo"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.demo.SmartTechExpoDemo"
+      "package": "com.netcore.smartech_app"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["my-config-plugin"],
+    "plugins": ["smartech-base-expo-plugin", "smartech-push-expo-plugin", "smartech-appinbox-expo-plugin"],
     "extra": {
       "myArray": [
         {

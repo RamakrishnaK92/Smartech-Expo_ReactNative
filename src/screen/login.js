@@ -7,8 +7,19 @@ import { AuthContext } from '../component/context';
 const SmartechReact = require('smartech-base-react-native');
 const SmartechPushReact = require('smartech-push-react-native');
 const SMTPNPermissionConstants = { SMT_PN_PERMISSION_GRANTED: 1, SMT_PN_PERMISSION_DENIED: 0};
+import messaging from '@react-native-firebase/messaging';
+
 
 const Login = ({ navigation }) => {
+
+
+      messaging().setBackgroundMessageHandler(async remoteMessage => {
+
+        console.log('firebase',remoteMessage);
+        // SmartechSDK.handlePushNotificationMessage(remoteMessage.data)
+        
+      });
+
 
     const { signIn } = React.useContext(AuthContext);
 
@@ -41,8 +52,8 @@ const Login = ({ navigation }) => {
         
         // Alert, Badge, Sound
      //   SmartechPushReact.registerForPushNotificationWithAuthorizationOptions(true, true, true)
-        // loginHandle(data.username);
-        // SmartechReact.login(data.username);
+        loginHandle(data.username);
+        SmartechReact.login(data.username);
         console.log("data is " + data.username);
     }
 

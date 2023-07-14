@@ -113,9 +113,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.smarttechexpodemo"
+    namespace "com.netcore.smartech_app"
     defaultConfig {
-        applicationId "com.smarttechexpodemo"
+        applicationId "com.netcore.smartech_app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -219,9 +219,18 @@ dependencies {
     }
 
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
+    
+
+    implementation 'com.google.firebase:firebase-messaging:23.0.0'
+    apply plugin: 'com.google.gms.google-services'  // Google Services plugin
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:29.0.3')
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    // Declare the dependency for the Firebase SDK for Google Analytics
+    implementation 'com.google.firebase:firebase-analytics'
 
     api "com.netcore.android:smartech-sdk:${SMARTECH_BASE_SDK_VERSION}"
-    // api "com.netcore.android:smartech-push:${SMARTECH_PUSH_SDK_VERSION}"
+     api "com.netcore.android:smartech-push:${SMARTECH_PUSH_SDK_VERSION}"
     api "com.netcore.android:smartech-appinbox:${SMARTECH_APPINBOX_SDK_VERSION}"
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
