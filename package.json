@@ -23,6 +23,7 @@
     "@react-navigation/native-stack": "6.5.0",
     "@react-navigation/stack": "^5.8.0",
     "expo": "~48.0.18",
+    "expo-notifications": "~0.16.1",
     "expo-splash-screen": "~0.18.2",
     "expo-status-bar": "~1.4.4",
     "moment": "^2.29.3",
@@ -45,13 +46,12 @@
     "react-navigation": "^4.4.0",
     "react-redux": "^7.2.1",
     "redux": "^4.0.5",
+    "smartech-appinbox-expo-plugin": "^1.0.0",
     "smartech-appinbox-react-native": "^3.2.2",
+    "smartech-base-expo-plugin": "^1.0.0",
     "smartech-base-react-native": "^3.2.3",
-    "smartech-push-react-native": "^3.2.4",
-    "smartech-base-expo-plugin": "../smartech-base-expo-plugin/smartech-base-expo-plugin-1.0.0.tgz",
-    "smartech-push-expo-plugin": "../smartech-push-expo-plugin/smartech-push-expo-plugin-1.0.0.tgz",
-    "smartech-appinbox-expo-plugin": "../smartech-appinbox-expo-plugin/smartech-appinbox-expo-plugin-1.0.0.tgz",
-    "expo-notifications": "~0.16.1"
+    "smartech-push-expo-plugin": "^1.0.0",
+    "smartech-push-react-native": "^3.2.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
