@@ -13,12 +13,12 @@ import messaging from '@react-native-firebase/messaging';
 const Login = ({ navigation }) => {
 
 
-      messaging().setBackgroundMessageHandler(async remoteMessage => {
+    //   messaging().setBackgroundMessageHandler(async remoteMessage => {
 
-        console.log('firebase',remoteMessage);
-        // SmartechSDK.handlePushNotificationMessage(remoteMessage.data)
+    //     console.log('firebase',remoteMessage);
+    //     // SmartechSDK.handlePushNotificationMessage(remoteMessage.data)
         
-      });
+    //   });
 
 
     const { signIn } = React.useContext(AuthContext);

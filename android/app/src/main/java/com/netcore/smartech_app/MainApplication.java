@@ -1,4 +1,6 @@
 package com.netcore.smartech_app;
+import com.netcore.android.Smartech;
+import java.lang.ref.WeakReference;
 
 import android.app.Application;
 import android.content.res.Configuration;
@@ -11,10 +13,6 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactNativeHost;
 import com.facebook.soloader.SoLoader;
-import com.netcore.android.Smartech;
-import com.netcore.android.smartechpush.SmartPush;
-
-import java.lang.ref.WeakReference;
 
 import expo.modules.ApplicationLifecycleDispatcher;
 import expo.modules.ReactNativeHostWrapper;
@@ -63,6 +61,11 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
+Smartech smartech = Smartech.getInstance(new WeakReference(this));
+          smartech.initializeSdk(this);
+          smartech.setDebugLevel(9);
+          smartech.trackAppInstallUpdateBySmartech();
+
     SoLoader.init(this, /* native exopackage */ false);
     if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
       // If you opted-in for the New Architecture, we load the native entry point for this app.
@@ -70,11 +73,6 @@ public class MainApplication extends Application implements ReactApplication {
     }
     ReactNativeFlipper.initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
     ApplicationLifecycleDispatcher.onApplicationCreate(this);
-      Smartech smartech = Smartech.getInstance(new WeakReference(this));
-      smartech.initializeSdk(this);
-      smartech.setDebugLevel(9);
-      smartech.trackAppInstallUpdateBySmartech();
-      SmartPush smartPush = SmartPush.getInstance(new WeakReference<>(this));  smartPush.fetchAlreadyGeneratedTokenFromFCM();
   }
 
   @Override

@@ -1,4 +1,12 @@
 #import "AppDelegate.h"
+#import "SmartechPushReactnative.h"
+#import "SmartechPushReactEventEmitter.h"
+#import <SmartPush/SmartPush.h>
+#import <UserNotifications/UserNotifications.h>
+#import <UserNotificationsUI/UserNotificationsUI.h>
+@interface AppDelegate () <UNUserNotificationCenterDelegate, SmartechDelegate>
+
+@end
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTLinkingManager.h>
@@ -13,6 +21,11 @@
   // They will be passed down to the ViewController used by React Native.
   self.initialProps = @{};
 
+[UNUserNotificationCenter currentNotificationCenter].delegate = self;
+[[SmartPush sharedInstance] registerForPushNotificationWithDefaultAuthorizationOptions];
+[[Smartech sharedInstance] initSDKWithDelegate:self withLaunchOptions:launchOptions];
+[[Smartech sharedInstance] setDebugLevel:SMTLogLevelVerbose];
+[[Smartech sharedInstance] trackAppInstallUpdateBySmartech];
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
@@ -49,12 +62,14 @@
 // Explicitly define remote notification delegates to ensure compatibility with some third-party libraries
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
+[[SmartPush sharedInstance] didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
   return [super application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
 // Explicitly define remote notification delegates to ensure compatibility with some third-party libraries
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
+[[SmartPush sharedInstance] didFailToRegisterForRemoteNotificationsWithError:error];
   return [super application:application didFailToRegisterForRemoteNotificationsWithError:error];
 }
 
@@ -63,5 +78,29 @@
 {
   return [super application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
 }
+
+ #pragma mark - UNUserNotificationCenterDelegate Methods
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+[[SmartPush sharedInstance] willPresentForegroundNotification:notification];
+completionHandler(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge);
+}
+
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+[[SmartPush sharedInstance] didReceiveNotificationResponse:response];
+
+
+completionHandler();
+}
+
+
+
+
+#pragma mark - SmartechDelegate Method
+- (void)handleDeeplinkActionWithURLString:(NSString *)deeplinkURLString andCustomPayload:(NSDictionary *_Nullable)customPayload {
+NSLog(@"Deeplink: %@", deeplinkURLString);
+NSLog(@"Custom Payload: %@", customPayload);
+}
+
 
 @end

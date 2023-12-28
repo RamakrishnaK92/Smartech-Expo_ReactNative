@@ -1,8 +1,11 @@
 {
   "expo": {
-    "name": "SmartTech-Expo-Demo",
-    "slug": "SmartTech-Expo-Demo",
-    "version": "1.0.0",
+    "name": "Qwork",
+    "slug": "qworker-app",
+    "owner": "qwork.my",
+    "version": "3.0.0",
+    "scheme": "qwork",
+    "jsEngine": "hermes",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -11,39 +14,100 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.smarttechexpodemo"
+      "bundleIdentifier": "com.netcore.SmartechApp",
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "buildNumber": "69",
+      "jsEngine": "hermes",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "This app uses the photo library to let user put a photo in profile page.",
+        "NSCameraUsageDescription": "This app uses the camera to let user put a photo in profile page.",
+        "NSLocationUsageDescription": "This app uses the location to locate the nearby jobs.",
+        "NSLocationWhenInUseUsageDescription": "This app uses the location to locate the nearby jobs.",
+        "NSUserTrackingUsageDescription": "This app tracks your usage to get better personalization and for app crash tracking"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.netcore.smartech_app"
+      "jsEngine": "hermes",
+      "package": "com.qworkapp.android",
+      "googleServicesFile": "./google-services.json",
+      "versionCode": 69
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["smartech-base-expo-plugin", "smartech-push-expo-plugin", "smartech-appinbox-expo-plugin"],
-    "extra": {
-      "myArray": [
+    "plugins": [
+      [
+        "onesignal-expo-plugin",
         {
-          "name": "HANSEL_APP_ID",
-          "value": "5K3TTFUXQXLNCF3OLVWC69AR2"
-        },
-        {
-          "name": "HANSEL_APP_KEY",
-          "value": "UG0H2YI119T04FL5ES4Z4T78O2Z8S0FM5L7SP5UTJIIN5BKCHD"
-        },
-        {
-          "name": "SMT_APP_ID",
-          "value": "ff4a5629301dc5aa05466aa1397962b7"
+          "mode": "production",
+          "iPhoneDeploymentTarget": "13.0"
         }
-      ]
+      ],
+      "expo-router",
+      [
+        "@config-plugins/react-native-branch",
+        {
+          "apiKey": "key_live_be8xAt3TQlHQlXGCCMOMAkekuvaV4pUW"
+        }
+      ],
+      [
+        "expo-tracking-transparency",
+        {
+          "userTrackingPermission": "This app tracks your usage to get better personalization and for app crash tracking"
+        }
+      ],
+      "expo-localization",
+      
+    ],
+    
+    "plugins": [
+   "smartech-base-expo-plugin",
+   "smartech-push-expo-plugin",
+   "smartech-appinbox-expo-plugin",
+   "./withCustomConfig.js"
+],
+"smartechInfo": {	
+  "smartechKeysArrayAndroid": [	
+      {    	
+          "name": "SMT_APP_ID",    	
+          "value": "your-smt-app-id"	
+      },	
+      {    	
+          "name": "HANSEL_APP_ID",    	
+          "value": "your-hansel-app-id"	
+      },	
+      {    	
+          "name": "HANSEL_APP_KEY",    	
+          "value": "your-hansel-app-key"	
+      }	
+   ],	
+  "myAppIosBundleIdentifier": "com.netcore.SmartechApp",   
+  "myGroupIdentifier": "group.com.netcore.SmartechApp",	
+  "SMARTECH_BASE_SDK_VERSION": "3.4.1",	
+  "SMARTECH_PUSH_SDK_VERSION": "3.4.1",	
+  "SMARTECH_APPINBOX_SDK_VERSION": "3.2.10",	
+  "SMT_APP_ID_IOS": "0e6fcbcb2600d8ea596051e8030be050",	
+  "HANSEL_APP_ID_IOS": "HG7WKEM8KK3V8LVNGGDDO04D4",	
+  "HANSEL_APP_KEY_IOS": "XAP23PIPEI1V1BEZZE5PPZ0YSWQFN45SQTV9MO353OODNSUSU0",	
+  "SmartechAutoFetchLocation": false,	
+  "SmartechUseAdvId": false,   
+  "ProjectEntitlementName": "your-project-entitlement-name",   
+  "usesFirebase": true
+},
+    "extra": {
+      "oneSignalAppId": "5ab0e2d4-5b46-4894-8eca-735qw9ce523e3",
+      "amplitudeApiKey": "2e91957a2ddf73f05f01e821erac22fc",
+      "posthogApiKey": "phc_C1us7HZFVzGjEpccIIlvhdMO2uztWyPyWYUvDRV5dDv",
+      "eas": {
+        "projectId": "3a7ed9d6-ee1a-4c19-be65-e99c120e1bc3"
+      }
     }
   }
 }

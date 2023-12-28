@@ -87,4 +87,17 @@ target 'SmartTechExpoDemo' do
       Pod::UI.warn e
     end
   end
+
+
+#content extension target
+target 'SmartechNCE' do
+  # Pods for 'SmartechNCE'
+pod 'SmartPush-iOS-SDK', '~> 3.4.0'
+
+end
+#service extension target
+target 'SmartechNSE' do
+  # Pods for 'SmartechNSE'
+pod 'SmartPush-iOS-SDK', '~> 3.4.0'
+end
 end

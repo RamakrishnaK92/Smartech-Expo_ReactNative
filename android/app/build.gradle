@@ -113,13 +113,13 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.netcore.smartech_app"
+    namespace 'com.netcore.smartech_app'
     defaultConfig {
-        applicationId "com.netcore.smartech_app"
+        applicationId 'com.netcore.smartech_app'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
     }
 
     splits {
@@ -189,7 +189,18 @@ android {
     }
 }
 
+repositories {
+                 maven { url 'https://artifacts.netcore.co.in/artifactory/android' }
+          }
+                
+
 dependencies {
+              api "com.netcore.android:smartech-sdk:3.3.2"
+            
+              api "com.netcore.android:smartech-push:3.3.1"
+            
+            api "com.netcore.android:smartech-appinbox:3.3.0"
+          
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
 
@@ -219,19 +230,6 @@ dependencies {
     }
 
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
-    
-
-    implementation 'com.google.firebase:firebase-messaging:23.0.0'
-    apply plugin: 'com.google.gms.google-services'  // Google Services plugin
-    // Import the Firebase BoM
-    implementation platform('com.google.firebase:firebase-bom:29.0.3')
-    // When using the BoM, you don't specify versions in Firebase library dependencies
-    // Declare the dependency for the Firebase SDK for Google Analytics
-    implementation 'com.google.firebase:firebase-analytics'
-
-    api "com.netcore.android:smartech-sdk:${SMARTECH_BASE_SDK_VERSION}"
-     api "com.netcore.android:smartech-push:${SMARTECH_PUSH_SDK_VERSION}"
-    api "com.netcore.android:smartech-appinbox:${SMARTECH_APPINBOX_SDK_VERSION}"
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
     debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
@@ -239,16 +237,11 @@ dependencies {
     }
     debugImplementation("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}")
 
-implementation('androidx.work:work-runtime:2.7.1')
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
     } else {
         implementation jscFlavor
     }
-}
-
-repositories {
-    maven { url 'https://artifacts.netcore.co.in/artifactory/android' }
 }
 
 apply from: new File(["node", "--print", "require.resolve('@react-native-community/cli-platform-android/package.json')"].execute(null, rootDir).text.trim(), "../native_modules.gradle");
