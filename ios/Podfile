@@ -75,6 +75,7 @@ target 'SmartTechExpoDemo' do
       target_installation_result.resource_bundle_targets.each do |resource_bundle_target|
         resource_bundle_target.build_configurations.each do |config|
           config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+          config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'No'
         end
       end
     end
@@ -92,12 +93,12 @@ target 'SmartTechExpoDemo' do
 #content extension target
 target 'SmartechNCE' do
   # Pods for 'SmartechNCE'
-pod 'SmartPush-iOS-SDK', '~> 3.4.0'
+pod 'SmartPush-iOS-SDK', '~> 3.4.1'
 
 end
 #service extension target
 target 'SmartechNSE' do
   # Pods for 'SmartechNSE'
-pod 'SmartPush-iOS-SDK', '~> 3.4.0'
+pod 'SmartPush-iOS-SDK', '~> 3.4.1'
 end
 end

@@ -83,9 +83,9 @@
     "react-native-svg": "13.9.0",
     "react-native-vector-icons": "^10.0.0",
     "react-timer-hook": "^3.0.7",
-    "smartech-appinbox-expo-plugin": "^1.0.1",
-    "smartech-base-expo-plugin": "^1.0.4",
-    "smartech-push-expo-plugin": "^1.0.2",
+    "smartech-appinbox-expo-plugin": "^1.0.2",
+    "smartech-base-expo-plugin": "^1.0.5",
+    "smartech-push-expo-plugin": "^1.0.3",
     "smartech-base-react-native": "^3.2.6",
     "smartech-push-react-native": "^3.2.7",
 

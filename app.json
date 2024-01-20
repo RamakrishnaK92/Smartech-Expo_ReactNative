@@ -18,7 +18,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.netcore.SmartechApp",
-      "googleServicesFile": "./GoogleService-Info.plist",
+      
       "buildNumber": "69",
       "jsEngine": "hermes",
       "infoPlist": {
@@ -36,7 +36,6 @@
       },
       "jsEngine": "hermes",
       "package": "com.qworkapp.android",
-      "googleServicesFile": "./google-services.json",
       "versionCode": 69
     },
     "web": {
@@ -65,14 +64,11 @@
       ],
       "expo-localization",
       
-    ],
-    
-    "plugins": [
    "smartech-base-expo-plugin",
    "smartech-push-expo-plugin",
    "smartech-appinbox-expo-plugin",
    "./withCustomConfig.js"
-],
+    ],
 "smartechInfo": {	
   "smartechKeysArrayAndroid": [	
       {    	
