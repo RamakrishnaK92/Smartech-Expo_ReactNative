@@ -35,11 +35,11 @@
 				<string>SmartechCarouselPortraitNotification</string>
 				<string>SmartechPN</string>
 			</array>
-			<key>UNNotificationExtensionDefaultContentHidden</key>
-			<true/>
 			<key>UNNotificationExtensionInitialContentSizeRatio</key>
 			<real>0.25</real>
 			<key>UNNotificationExtensionUserInteractionEnabled</key>
+			<true/>
+			<key>UNNotificationExtensionDefaultContentHidden</key>
 			<true/>
 		</dict>
 		<key>NSExtensionMainStoryboard</key>
