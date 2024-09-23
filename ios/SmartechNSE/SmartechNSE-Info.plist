@@ -30,12 +30,12 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.usernotifications.service</string>
 		<key>NSExtensionPrincipalClass</key>
-		<string>NotificationService</string>
+		<string>SmartechNotificationService</string>
 	</dict>
 	<key>SmartechKeys</key>
 	<dict>
 		<key>SmartechAppGroup</key>
-		<string>group.com.netcore.SmartechApp</string>
+		<string>group.group.com.netcore.SmartechApp</string>
 	</dict>
 </dict>
 </plist>

@@ -1,99 +1,88 @@
 {
   "expo": {
-    "name": "SmartechExpoRN",
-    "slug": "app",
-    "owner": "netcore.SmartechApp",
-    "version": "3.0.0",
-    "scheme": "SmartechRN",
-    "jsEngine": "hermes",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "assetBundlePatterns": ["**/*"],
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.netcore.SmartechApp",
-      
-      "buildNumber": "69",
-      "jsEngine": "hermes",
-      "infoPlist": {
-        "NSPhotoLibraryUsageDescription": "This app uses the photo library to let user put a photo in profile page.",
-        "NSCameraUsageDescription": "This app uses the camera to let user put a photo in profile page.",
-        "NSLocationUsageDescription": "This app uses the location to locate the nearby jobs.",
-        "NSLocationWhenInUseUsageDescription": "This app uses the location to locate the nearby jobs.",
-        "NSUserTrackingUsageDescription": "This app tracks your usage to get better personalization and for app crash tracking"
-      }
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "jsEngine": "hermes",
-      "package": "com.android.Smartech",
-      "versionCode": 69
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
+    "name": "ExpoSmartech",
+    "slug": "Expo-Smartech",
     "plugins": [
-      
-      "expo-router",
-      [
-        "@config-plugins/react-native-branch",
-        {
-          "apiKey": "key_live_be8xAt3TQlHQlXGCCMOMAkekuvaV4pUW"
-        }
-      ],
-      [
-        "expo-tracking-transparency",
-        {
-          "userTrackingPermission": "This app tracks your usage to get better personalization and for app crash tracking"
-        }
-      ],
+      "expo-build-properties",
+      "expo-font",
       "expo-localization",
-      
-   "smartech-base-expo-plugin",
-   "smartech-push-expo-plugin",
-   "./withCustomConfigNew.js"
-    ],
-"smartechInfo": {	
-  "smartechKeysArrayAndroid": [	
-      {    	
-          "name": "SMT_APP_ID",    	
-          "value": "your-smt-app-id"	
-      },	
-      {    	
-          "name": "HANSEL_APP_ID",    	
-          "value": "your-hansel-app-id"	
-      },	
-      {    	
-          "name": "HANSEL_APP_KEY",    	
-          "value": "your-hansel-app-key"	
-      }	
-   ],	
-  "myAppIosBundleIdentifier": "com.netcore.SmartechApp",   
-  "myGroupIdentifier": "com.netcore.SmartechApp",
-  "SMARTECH_BASE_SDK_VERSION": "3.5.2",	
-  "SMT_APP_ID_IOS": "0e6fcbcb2600d8ea596051e8030be050",	
-  "HANSEL_APP_ID_IOS": "HG7WKEM8KK3V8LVNGGDDO04D4",	
-  "HANSEL_APP_KEY_IOS": "XAP23PIPEI1V1BEZZE5PPZ0YSWQFN45SQTV9MO353OODNSUSU0",	
-  "SmartechAutoFetchLocation": false,	
-  "SmartechUseAdvId": false,   
-  "ProjectEntitlementName": "SmartechExpo.entitlements",   
-  "usesFirebase": true
-},
-    "extra": {
-      "amplitudeApiKey": "2e91957a2ddf73f05f01e821erac22fc",
-      "posthogApiKey": "phc_C1us7HZFVzGjEpccIIlvhdMO2uztWyPyWYUvDRV5dDv",
-      "eas": {
-        "projectId": "3a7ed9d6-ee1a-4c19-be65-e99c120e1bc3"
+      "expo-tracking-transparency",
+      [
+        "smartech-base-expo-plugin",
+      {
+        "isNewArchEnabled": false,
+        "deepLinkDelay": 3,
+        "android": {
+          "isLogEnabled": true,
+          "SMARTECH_BASE_SDK_VERSION": "3.5.5",
+          "isKotlinProject": true,
+          "smartechMetaData": [
+            {
+              "name": "SMT_APP_ID",
+              "value": ""
+            }
+          ],
+          "smartechNudges": {
+            "smartechNudgesEnabled": true,
+            "useEncryption": false,
+            "isLogEnabled": true,
+            "smartechNudgesMetaData": [
+              {
+                "name": "HANSEL_APP_ID",
+                "value": "<your-hansel-app-id>"
+              },
+              {
+                "name": "HANSEL_APP_KEY",
+                "value": "<your-hansel-app-key>"
+              }
+            ]
+          }
+        },
+        "ios": {
+          "appId": "0e6fcbcb2600d8ea596051e8030be050",
+          "bundleIdentifier": "com.netcore.SmartechApp",
+          "groupIdentifier": "group.com.netcore.SmartechApp",
+          "autoFetchLocation": true,
+          "useAdvID": false,
+          "isLogEnabled": true,
+          "smartechNudges": {
+            "smartechNudgesEnabled": true,
+            "appId": "HG7WKEM8KK3V8LVNGGDDO04D4",
+            "appKey": "XAP23PIPEI1V1BEZZE5PPZ0YSWQFN45SQTV9MO353OODNSUSU0",
+            "testDeviceURLName": "",
+            "testDeviceURLSchema": "hanselpebbletrace"
+          }
+        }
       }
-    }
+    ],
+   [
+      "smartech-push-expo-plugin",
+      {
+        "android": {
+          "SMARTECH_PUSH_SDK_VERSION": "3.5.1",
+          "isKotlinProject": true,
+          "useSmartechFCM": true
+        },
+        "ios": {
+          "groupIdentifier": "group.com.netcore.SmartechApp",
+          "mode": "development"
+        }
+      }
+    ],
+    [
+      "smartech-appinbox-expo-plugin",
+      {
+        "android": {
+          "SMARTECH_APPINBOX_SDK_VERSION": "3.5.1"
+        }
+      }
+    ]
+  ],
+  "android": {
+    "package": "com.netcore.SmartAndroid"
+  },
+  "ios": {
+    "bundleIdentifier": "com.netcore.SmartechApp"
   }
+}
 }

@@ -50,7 +50,7 @@
 	<key>SmartechKeys</key>
 	<dict>
 		<key>SmartechAppGroup</key>
-		<string>group.com.netcore.SmartechApp</string>
+		<string>group.group.com.netcore.SmartechApp</string>
 		<key>SmartechNotificationIcon</key>
 		<string></string>
 	</dict>
